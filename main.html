@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πού Είναι οι Διαβάσεις; 🚶‍♂️</title>
+    <!-- Tailwind CSS for modern, clean styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts for a friendlier text look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        .font-friendly { font-family: 'Comfortaa', cursive, sans-serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-amber-50 text-gray-800 font-body antialiased">
+
+    <!-- Hero / Header Section (No more scary red!) -->
+    <header class="py-12 px-4 text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 bg-amber-200 text-amber-900 font-bold px-4 py-1.5 rounded-full text-sm mb-4 transform -rotate-1">
+            <span>🚶‍♀️ Προσοχή: Πεζοί στο δρόμο!</span>
+        </div>
+        <h1 class="font-friendly text-4xl md:text-5xl text-gray-900 mb-4 tracking-tight">
+            Επιχείρηση: <span class="underline decoration-amber-400 decoration-wavy">Λευκές Ρίγες</span>🦓
+        </h1>
+        <p class="text-lg text-gray-600 max-w-xl mx-auto leading-relaxed">
+            Ψάχνουμε τις διαβάσεις στον Δήμο μας με το κιάλι. Μέχρι να εμφανιστούν, εμείς μετράμε τις μέρες!
+        </p>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 pb-12">
+        
+        <!-- Fun Counter Section -->
+        <section class="bg-gray-900 text-white rounded-3xl shadow-xl p-8 mb-10 relative overflow-hidden transform hover:scale-[1.01] transition-transform">
+            <!-- Decorative road lines background effect -->
+            <div class="absolute inset-x-0 bottom-0 h-3 bg-stripes flex justify-around opacity-20">
+                <div class="w-8 h-full bg-white"></div>
+                <div class="w-8 h-full bg-white"></div>
+                <div class="w-8 h-full bg-white"></div>
+                <div class="w-8 h-full bg-white"></div>
+                <div class="w-8 h-full bg-white"></div>
+            </div>
+
+            <div class="relative z-10 text-center">
+                <h2 class="text-amber-400 font-friendly text-lg md:text-xl mb-4 tracking-wide">
+                    Μέρες που έχουν περάσει από όταν καταθέσαμε το ζήτημα:
+                </h2>
+                <div class="flex items-center justify-center space-x-3 my-2">
+                    <span id="days-counter" class="text-7xl md:text-8xl font-black text-white tracking-tight drop-shadow-[0_4px_0_rgba(251,191,36,0.4)]">0</span>
+                </div>
+                <p class="text-sm text-gray-400 max-w-sm mx-auto mt-4 bg-gray-800/60 py-2 px-4 rounded-full">
+                    ⏱️ Ο χρόνος κυλάει, οι μπογιές ακόμα να έρθουν...
+                </p>
+            </div>
+        </section>
+
+        <!-- Article Preview Section -->
+        <section class="mb-10">
+            <div class="bg-white rounded-3xl shadow-md overflow-hidden border-2 border-gray-100 flex flex-col md:flex-row">
+                <!-- Article Image -->
+                <div class="md:w-2/5 h-52 md:h-auto bg-amber-100 relative min-h-[220px]">
+                    <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=800&q=80" 
+                         alt="Διαβάσεις πεζών" 
+                         class="w-full h-full object-cover">
+                    <span class="absolute top-3 left-3 bg-white text-gray-900 font-bold px-3 py-1 rounded-full text-xs shadow-sm">
+                        📢 Νέα & Ενημέρωση
+                    </span>
+                </div>
+                
+                <!-- Article Preview Content -->
+                <div class="p-6 md:w-3/5 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-friendly text-xl text-gray-900 mb-3">
+                            Γιατί κυνηγάμε το αυτονόητο; (Μια μικρή ιστορία)
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                            Παρά τις συνεχείς οχλήσεις και την επίσημη κατάθεση του αιτήματός μας, οι κεντρικοί δρόμοι παραμένουν "πίστες" ταχύτητας. Οι λευκές ρίγες έχουν σβηστεί προ πολλού, μετατρέποντας μια απλή βόλτα με το καρότσι ή τα πόδια σε extreme sport...
+                        </p>
+                    </div>
+                    <div class="mt-6">
+                        <button onclick="openArticleModal()" class="inline-flex items-center text-sm font-bold text-amber-600 hover:text-amber-700 cursor-pointer group bg-amber-50 px-4 py-2 rounded-xl transition-colors">
+                            Διαβάστε όλο το άρθρο 
+                            <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friendly Email Action Box -->
+        <section class="bg-amber-300 text-amber-950 rounded-3xl p-8 text-center shadow-inner relative">
+            <div class="max-w-md mx-auto">
+                <span class="text-3xl mb-2 block">✉️</span>
+                <h3 class="font-friendly text-xl mb-2">Θέλεις να τους στείλεις ένα "σκούντημα";</h3>
+                <p class="text-amber-900 mb-6 text-sm">
+                    Αν θες να θυμίσεις κι εσύ στον Δήμο ότι χρειαζόμαστε διαβάσεις χθες, στείλε ένα γρήγορο email στο επίσημο πρωτόκολλο:
+                </p>
+                
+                <div class="flex flex-col gap-3">
+                    <div class="bg-white/80 border border-amber-400 px-4 py-2 rounded-xl font-mono text-xs md:text-sm text-amber-950 select-all font-bold break-all">
+                        protocol@dpapxol.gov.gr
+                    </div>
+                    <a href="mailto:protocol@dpapxol.gov.gr?subject=Αίτημα%20για%20Διαβάσεις%20Πεζών&body=Αξιότιμοι,%20παρακαλούμε%20όπως%20μεριμνήσετε%20άμεσα%20για%20τη%20διαγράμμιση%20των%20διαβάσεων%20πεζών..." 
+                       class="bg-gray-900 hover:bg-gray-800 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer transform active:scale-95">
+                        <i class="fa-solid fa-paper-plane text-amber-400"></i> Στείλε Email Τώρα
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-400 text-xs mt-4">
+        <p>🐾 Φτιαγμένο με αγάπη για τους πεζούς αυτού του τόπου • 2026</p>
+    </footer>
+
+    <!-- Pop-up Modal for Full Article -->
+    <div id="article-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl transition-transform duration-300 scale-95 transform border-4 border-amber-300" id="modal-content">
+            <div class="sticky top-0 bg-white border-b border-gray-100 p-4 flex justify-between items-center z-10">
+                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-full uppercase">📖 Ανάγνωση Άρθρου</span>
+                <button onclick="closeArticleModal()" class="text-gray-400 hover:text-gray-600 text-xl p-1 cursor-pointer bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+            <div class="p-6 md:p-8">
+                <h2 class="font-friendly text-2xl md:text-3xl text-gray-900 mb-6">
+                    Γιατί κυνηγάμε το αυτονόητο; (Μια μικρή ιστορία)
+                </h2>
+                <div class="text-gray-700 space-y-4 leading-relaxed text-sm md:text-base">
+                    <p>
+                        Παρά τις συνεχείς οχλήσεις και την επίσημη κατάθεση του αιτήματός μας, οι κεντρικοί δρόμοι παραμένουν "πίστες" ταχύτητας. Οι λευκές ρίγες έχουν σβηστεί προ πολλού, μετατρέποντας μια απλή βόλτα με το καρότσι ή τα πόδια σε extreme sport για παιδιά, ηλικιωμένους και άτομα με κινητικά προβλήματα.
+                    </p>
+                    <p>
+                        Η έλλειψη ορατής σήμανσης αφαιρεί από τους πεζούς το βασικότερο δικαίωμα ασφάλειας στην πόλη τους. Οι οδηγοί συχνά δεν αντιλαμβάνονται ότι πλησιάζουν σε σημείο διέλευσης, με αποτέλεσμα να μην μειώνουν ταχύτητα εκεί που θα έπρεπε.
+                    </p>
+                    <div class="bg-amber-50 p-4 rounded-2xl border-l-4 border-amber-400 my-4">
+                        <p class="font-bold text-gray-900 mb-2">Τι ζητάμε να γίνει χθες:</p>
+                        <ul class="list-disc list-inside space-y-1 pl-2 text-gray-700 text-sm">
+                            <li>Άμεση επαναβαφή όλων των σβησμένων διαβάσεων κοντά σε σχολεία, στάσεις και πλατείες.</li>
+                            <li>Χρήση ειδικής, ανθεκτικής μπογιάς που δεν εξαφανίζεται στην πρώτη βροχή.</li>
+                            <li>Σωστή κάθετη σήμανση με εμφανείς πινακίδες.</li>
+                        </ul>
+                    </div>
+                    <p>
+                        Δεν πρόκειται για πολυτέλεια, αλλά για τη βασική υποδομή μιας βιώσιμης πόλης. Μέχρι ο Δήμος να βγάλει τις βούρτσες και τα κουτιά με τις μπογιές από τις αποθήκες, εμείς θα είμαστε εδώ και θα μετράμε τις μέρες!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Controls -->
+    <script>
+        // 1. Live Dynamic Counter Logic
+        function updateCounter() {
+            // SET YOUR SUBMISSION DATE HERE (Format: YYYY-MM-DD)
+            const submissionDate = new Date("2026-05-24T00:00:00"); 
+            const today = new Date();
+            
+            const differenceInTime = today.getTime() - submissionDate.getTime();
+            let differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+            
+            if (differenceInDays < 0) differenceInDays = 0;
+            document.getElementById("days-counter").innerText = differenceInDays;
+        }
+
+        updateCounter();
+
+        // 2. Modal Window Controls
+        const modal = document.getElementById('article-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        function openArticleModal() {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArticleModal() {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeArticleModal();
+            }
+        });
+    </script>
+</body>
+</html>
