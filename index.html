@@ -18,9 +18,7 @@
 <body class="bg-amber-50 text-gray-800 font-body antialiased">
 
     <header class="py-12 px-4 text-center max-w-3xl mx-auto">
-        <div class="inline-flex items-center gap-2 bg-amber-200 text-amber-900 font-bold px-4 py-1.5 rounded-full text-sm mb-4 transform -rotate-1">
-            <span>🚶‍♀️ Προσοχή: Πεζοί στο δρόμο!</span>
-        </div>
+     
         <h1 class="font-friendly text-4xl md:text-5xl text-gray-900 mb-4 tracking-tight">
             Επιχείρηση: <span class="underline decoration-amber-400 decoration-wavy">Λευκές Ρίγες</span>🦓
         </h1>
@@ -31,6 +29,7 @@
 
     <main class="max-w-3xl mx-auto px-4 pb-12">
         
+        <!-- Counter Section -->
         <section class="bg-gray-900 text-white rounded-3xl shadow-xl p-8 mb-10 relative overflow-hidden transform hover:scale-[1.01] transition-transform">
             <div class="absolute inset-x-0 bottom-0 h-3 flex justify-around opacity-20">
                 <div class="w-8 h-full bg-white"></div>
@@ -53,10 +52,11 @@
             </div>
         </section>
 
+        <!-- Article Preview Section -->
         <section class="mb-10">
             <div class="bg-white rounded-3xl shadow-md overflow-hidden border-2 border-gray-100 flex flex-col md:flex-row">
                 <div class="md:w-2/5 h-52 md:h-auto bg-amber-100 relative min-h-[220px]">
-                    <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=800&q=80" 
+                    <img src="perikleous.png" 
                          alt="Διαβάσεις πεζών" 
                          class="w-full h-full object-cover">
                     <span class="absolute top-3 left-3 bg-white text-gray-900 font-bold px-3 py-1 rounded-full text-xs shadow-sm">
@@ -83,6 +83,22 @@
             </div>
         </section>
 
+        <!-- ΝΕΟ: Voting Call to Action Section -->
+        <section class="bg-white rounded-3xl p-8 text-center shadow-md border-2 border-amber-200 mb-10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-16 h-16 bg-amber-100 rounded-bl-full flex items-start justify-end p-2 text-amber-500 font-bold text-sm">
+                🗳️
+            </div>
+            <div class="max-w-md mx-auto">
+                <h3 class="font-friendly text-2xl text-gray-900 mb-6">Κάνε τη φωνή σου να ακουστεί!</h3>
+            
+                <a href="https://secure.avaaz.org/community_petitions/el/demos_papagou_kholargou_apaiteste_diabaseis_sto_kholargo/?cIQtXub&utm_source=copy&utm_medium=social_share&utm_campaign=1766556&utm_term=cIQtXub%2Bel&share_location=do_landing&fbclid=IwY2xjawR_t3RleHRuA2FlbQIxMABicmlkETFvYVFkTDhTMGVvWkM4R0pCc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHmfNTyDsUF9hvpfuUNgiXAWPG6dA7gQGsqWI1JymRrdNl1uPtd2ztG7R5ESi_aem_lCW-EKLRJX8vTatRZqxmlw" target="_blank" class="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-gray-950 font-extrabold text-base px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all transform active:scale-[0.98]">
+                    <span>Ψήφισε αν θες κι εσύ διαβάσεις, παίρνει 20 δευτερόλεπτα</span>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Friendly Email Action Box -->
         <section class="bg-amber-300 text-amber-950 rounded-3xl p-8 text-center shadow-inner relative">
             <div class="max-w-md mx-auto">
                 <span class="text-3xl mb-2 block">✉️</span>
@@ -109,6 +125,7 @@
         <p>🐾 Φτιαγμένο με αγάπη για τους πεζούς αυτού του τόπου • 2026</p>
     </footer>
 
+    <!-- Popup Modal -->
     <div id="article-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl transition-transform duration-300 scale-95 transform border-4 border-amber-300" id="modal-content">
             <div class="sticky top-0 bg-white border-b border-gray-100 p-4 flex justify-between items-center z-10">
@@ -166,7 +183,6 @@
     </div>
 
     <script>
-        // 1. Live Dynamic Counter Logic
         function updateCounter() {
             const submissionDate = new Date("2026-05-24T00:00:00"); 
             const today = new Date();
@@ -180,7 +196,6 @@
 
         updateCounter();
 
-        // 2. Modal Window Controls
         const modal = document.getElementById('article-modal');
         const modalContent = document.getElementById('modal-content');
 
