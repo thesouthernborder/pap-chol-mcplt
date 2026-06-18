@@ -45,16 +45,30 @@
                 <div class="flex items-center justify-center space-x-3 my-2">
                     <span id="days-counter" class="text-7xl md:text-8xl font-black text-white tracking-tight drop-shadow-[0_4px_0_rgba(251,191,36,0.4)]">0</span>
                 </div>
+                <p class="text-sm text-gray-400 max-w-sm mx-auto mt-4 bg-gray-800/60 py-2 px-4 rounded-full">
+                    ⏱️ Ο χρόνος κυλάει, οι διαβάσεις ακόμα να έρθουν...
+                </p>
 
-                <!-- Municipality Response Field -->
+                <!-- Municipality Response Field with PDF Link -->
                 <div class="mt-8 pt-6 border-t border-gray-800 text-left">
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-2 flex items-center gap-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-3 flex items-center gap-2">
                         <span>🏛️ Επίσημη Απάντηση Δήμου</span>
                     </h4>
-                    <div class="bg-gray-800/50 rounded-2xl p-4 text-sm text-gray-300 border border-gray-800 leading-relaxed">
-                        <p class="italic">
-                            "Εδώ μπορείτε να προσθέσετε την επίσημη τοποθέτηση ή απάντηση που λάβατε από τους υπεύθυνους του Δήμου σχετικά με το χρονοδιάγραμμα υλοποίησης των έργων."
-                        </p>
+                    <div class="bg-gray-800/50 rounded-2xl p-5 border border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-start gap-3">
+                            <div class="bg-red-500/10 text-red-400 p-3 rounded-xl border border-red-500/20 text-xl shrink-0">
+                                <i class="fa-solid fa-file-pdf"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-200">Έγγραφο Απάντησης Δήμου</p>
+                                <p class="text-xs text-gray-400 mt-0.5">Μορφή: PDF • Επίσημο Πρωτόκολλο</p>
+                            </div>
+                        </div>
+                        <!-- ΑΝΤΙΚΑΤΑΣΤΗΣΕ ΤΟ "apantisi-dimou.pdf" ΜΕ ΤΟ ΟΝΟΜΑ ΤΟΥ ΔΙΚΟΥ ΣΟΥ ΑΡΧΕΙΟΥ -->
+                        <a href="apantisi-dimou.pdf" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 text-amber-400 font-bold text-xs px-4 py-3 rounded-xl border border-gray-700 transition-colors shadow-md group">
+                            <span>Προβολή Εγγράφου</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-amber-400/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -109,7 +123,7 @@
             </div>
         </section>
 
-        <!-- Vote/Avaaz Petition Section (Moved to the end) -->
+        <!-- Vote/Avaaz Petition Section -->
         <section class="bg-white rounded-3xl p-8 text-center shadow-md border-2 border-amber-200 relative overflow-hidden">
             <div class="absolute top-0 right-0 w-16 h-16 bg-amber-100 rounded-bl-full flex items-start justify-end p-2 text-amber-500 font-bold text-sm">
                 🗳️
@@ -134,7 +148,6 @@
     <div id="article-modal" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden opacity-0 transition-opacity duration-300">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl transition-transform duration-300 scale-95 transform border-4 border-amber-300" id="modal-content">
             <div class="sticky top-0 bg-white border-b border-gray-100 p-4 flex justify-between items-center z-10">
-                <span class="text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1 rounded-full uppercase">📖 Ανάγνωση Άρθρου</span>
                 <button onclick="closeArticleModal()" class="text-gray-400 hover:text-gray-600 text-xl p-1 cursor-pointer bg-gray-100 rounded-full w-8 h-8 flex items-center justify-center">
                     <i class="fa-solid fa-xmark text-sm"></i>
                 </button>
